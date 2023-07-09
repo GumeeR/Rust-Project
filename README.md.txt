@@ -1,0 +1,1 @@
+Aprendiendo a usar Rust con cositas basicas por el momento y se ira actualizando hasta tener un proyecto decente.
