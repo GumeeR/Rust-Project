@@ -1,16 +1,24 @@
 fn main() {
-    println!("Esta es tu última oportunidad. Después, ya no podrás echarte atrás. Si tomas la pastilla azul, fin de la historia. Despertarás en tu cama y creerás lo que quieras creerte. Si tomas la roja, te quedas en el País de las Maravillas y yo te enseñaré hasta dónde llega la madriguera de conejos. Recuerda lo único que te ofrezco es la verdad. Nada más.");
-    println!("Qué pastilla tomarás? roja o azul?");
+    let numero_1 = 123;  
+    let numero_2 = 123;
 
-    let mut opcion: String = String::new();
-    std::io::stdin().read_line(&mut opcion).unwrap();
-    let pastilla: &str = opcion.trim();
-
-    if pastilla == "roja" {
-        println!("Muy bien, Neo. Sígueme....");
-    } else if pastilla == "azul" {
-        println!("Como prefieras. No nos veremos nunca mas....");
-    } else {
-        println!("Tal parece que no eres el Neo que pensábamos.");
+    let suma = numero_1 + numero_2;
+    
+    loop {
+        //mostrar los dos numeros en consola
+        println!("primer numero {}, segundo numero {}", numero_1, numero_2);
+        
+        //Obtener del usuario el numero que represnta la suma
+        let mut suma_usuario = String::new();
+        std::io::stdin().read_line(&mut suma_usuario).unwrap();
+        let suma_usuario_int: i32 = suma_usuario.trim().parse().unwrap();
+        
+        
+        if suma_usuario_int == suma {
+            println!("La suma es correcta 🦝");
+            break;
+        } else {
+            println!("La suma es incorrecta 🦝. Respuesta correcta: {}", suma)
+        }
     }
 }
