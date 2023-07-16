@@ -1,56 +1,69 @@
-use regex::Regex;
+fn main() {
+    println!("     ----------");
+    println!("     Tabla de datos🦝");
+    println!("     ----------");
 
-fn make_operation(reg: Regex, mut expresion: String, operation: &str) -> String {
-    if operation.is_empty() {
-        return "".to_string();
-    }
+    let mut data_name:Vec<String> = Vec::new();
+    let mut data_last_name:Vec<String> = Vec::new();
+    let mut data_age:Vec<String> = Vec::new();
+    let mut data_country:Vec<String> = Vec::new();
+    let mut option_user:String = String::new();
+
+
     loop {
-        //Aplicar operaciones
-        let caps = reg.captures(expresion.as_str());
+        let mut name:String = String::new();
+        let mut last_name:String = String::new();
+        let mut age:String = String::new();
+        let mut country:String = String::new();
 
-        if caps.is_none() {
+        println!("Cual es tu nombre🦝?");
+        std::io::stdin().read_line(&mut name).unwrap();
+        name = name.trim().to_string();
+        data_name.push(name);
+
+
+        println!("Cual es tu apellido🦝?");
+        std::io::stdin().read_line(&mut last_name).unwrap();
+        last_name = last_name.trim().to_string();
+        data_last_name.push(last_name);
+
+        println!("Cual es tu edad🦝?");
+        std::io::stdin().read_line(&mut age).unwrap();
+        age = age.trim().to_string();
+        data_age.push(age);
+
+
+        println!("De que pais eres🦝?");
+        std::io::stdin().read_line(&mut country).unwrap();
+        country = country.trim().to_string();
+        data_country.push(country);
+    
+        loop {
+            println!("----------------------------------------");
+            option_user ="".trim().to_string();
+            println!("Oprime 'E' para salir o 'C' para continuar...");
+            std::io::stdin().read_line(&mut option_user).unwrap();
+            option_user = option_user.trim().to_string();
+            println!("----------------------------------------");
+            if option_user == "E" || option_user == "e" || option_user == "C" || option_user == "c"{
+                break;
+            }
+            println!("'{}': Esta opcion no valida.", option_user);
+
+        }
+        if option_user == "E" || option_user == "e"{
+            
             break;
         }
-        let caps = caps.unwrap();
 
-        let cap_expresion = caps.get(0).unwrap().as_str();
-        let left_value: i32 = caps.get(1).unwrap().as_str().parse().unwrap();
-        let right_value: i32 = caps.get(2).unwrap().as_str().parse().unwrap();
 
-        let result = match operation {
-            "+" => left_value + right_value,
-            "-" => left_value - right_value,
-            "*" => left_value * right_value,
-            "/" => left_value / right_value,
-            _ => 0,
-        };
-
-        expresion = expresion.replace(cap_expresion, &result.to_string());
     }
-    expresion
-}
-
-fn main() {
-    //Regex
-    let re_add = Regex::new(r"(\d+)\s?\+\s?(\d+)").unwrap();
-    let re_less = Regex::new(r"(\d+)\s?\-\s?(\d+)").unwrap();
-    let re_mult = Regex::new(r"(\d+)\s?\*\s?(\d+)").unwrap();
-    let re_div = Regex::new(r"(\d+)\s?/\s?(\d+)").unwrap();
-
-    //Traer datos del usuario
-    println!("Por favor introduce tu expresion");
-    let mut expresion = String::new();
-    std::io::stdin().read_line(&mut expresion).unwrap();
-
-    //Multiplicacion
-    expresion = make_operation(re_mult, expresion, "*");
-    //Division
-    expresion = make_operation(re_div, expresion, "/");
-    //Suma
-    expresion = make_operation(re_add, expresion, "+");
-    //Resta
-    expresion = make_operation(re_less, expresion, "-");
-
-    //Mostrar resultados
-    println!("Resultados: {}", expresion);
+    println!("Nombre    Apellido    Edad   Origen");
+    println!("-----------------------------------");
+    for i in 0..data_name.len(){
+        println!("{}    {}    {}   {}",data_name[i], data_last_name[i], data_age[i],data_country[i]);
+    }
+    println!("       --------");
+    println!("       ADIOS.");
+    println!("       --------");
 }
