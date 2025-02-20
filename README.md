@@ -1,46 +1,45 @@
 # 🏓 Rust WASM Pong
 
-¡Bienvenido a **Rust WASM Pong**! 🎮 Un clon clásico del juego Pong desarrollado en **Rust** con **Bevy** y compilado a **WASM** para jugarlo en el navegador. 🚀
+Welcome to **Rust WASM Pong**! 🎮 A classic Pong game clone developed in **Rust** with **Bevy** and compiled to **WASM** to play it in the browser. 🚀
 
-## 📜 Descripción
+## 📜 Description.
 
-Este proyecto utiliza el motor de juegos **Bevy** junto con la física de **Heron** para crear una versión moderna de Pong, compatible con WebAssembly. Es una excelente demostración del poder de **Rust** en el desarrollo de juegos y aplicaciones web.
+This project uses the **Bevy** game engine along with **Heron** physics to create a modern version of Pong, compatible with WebAssembly. It is an excellent demonstration of the power of **Rust** in game and web application development.
 
-## 🛠 Tecnologías
+## 🛠 Technologies.
 
 - 🦀 **Rust**
 - 🎮 **Bevy Engine**
 - ⚙️ **Heron Physics**
 - 🌐 **WASM** (WebAssembly)
-- 🕹️ **Juego Clásico de Pong**
+- 🕹️ **Classic Pong Game**
 
-## 📦 Instalación y Ejecución
+## 📦 Installation and Execution.
 
-### 🔹 Requisitos previos
-Asegúrate de tener instalado:
+### 🔹 Prerequisites.
+Make sure you have installed:
 - [Rust](https://www.rust-lang.org/)
 - [wasm-pack](https://rustwasm.github.io/wasm-pack/)
-- Un servidor web para ejecutar archivos WASM
+- A web server to run WASM files
 
-### 🔹 Clonacion de repositorio
-1. Clona este repositorio:
+### 🔹 Repository Cloning
+1. Clone this repository:
    ```sh
    git clone https://github.com/GumeeR/Rust-Project.git
    
-### ⚙️ Compilar el Proyecto
-1. Ejecuta el siguiente comando:
-   ```sh
+##### ⚙️ Compile the Project
+1. Run the following command:
+   ````sh
    wasm-pack build --target web
    
-### 🌐 Ejecutar en el Navegador
-1. Para probar el juego en el navegador, puedes usar un servidor local:
-   ```sh
+### 🌐 Running in the Browser
+1. To test the game in the browser, you can use a local server:
+   ````sh
    python -m http.server
-   Luego, abre en tu navegador: http://localhost:8000
+   Then, open in your browser: http://localhost:8000
 
-### 🏛 Otras Ramas
-1. Este repositorio también contiene otra rama con un proyecto diferente:
-   ```sh
-   smart-contract: Implementación de un contrato inteligente en NEAR, desarrollado en Rust
-   Si te interesa el desarrollo de smart contracts en NEAR, cambia a esta rama y revisa su README para más detalles.
-   
+### 🏛 Other Branches
+1. This repository also contains another branch with a different project:
+   ````sh
+   smart-contract: Implementation of a smart contract in NEAR, developed in Rust
+   If you are interested in the development of smart contracts in NEAR, change
