@@ -22,7 +22,25 @@ Asegúrate de tener instalado:
 - [wasm-pack](https://rustwasm.github.io/wasm-pack/)
 - Un servidor web para ejecutar archivos WASM
 
-### 🔹 Compilación y Ejecución
+### 🔹 Clonacion de repositorio
 1. Clona este repositorio:
    ```sh
    git clone https://github.com/GumeeR/Rust-Project.git
+   
+### ⚙️ Compilar el Proyecto
+1. Ejecuta el siguiente comando:
+   ```sh
+   wasm-pack build --target web
+   
+### 🌐 Ejecutar en el Navegador
+1. Para probar el juego en el navegador, puedes usar un servidor local:
+   ```sh
+   python -m http.server
+   Luego, abre en tu navegador: http://localhost:8000
+
+### 🏛 Otras Ramas
+1. Este repositorio también contiene otra rama con un proyecto diferente:
+   ```sh
+   smart-contract: Implementación de un contrato inteligente en NEAR, desarrollado en Rust
+   Si te interesa el desarrollo de smart contracts en NEAR, cambia a esta rama y revisa su README para más detalles.
+   
