@@ -1,4 +1,4 @@
-# Rust-Project 🚀
+# Rust-Project / Smart Contract in NEAR 🚀
 
 This repository contains a small **smart contract** developed in **Rust** for the **NEAR** virtual blockchain 🦝.
 
